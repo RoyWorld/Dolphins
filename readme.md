@@ -4,7 +4,7 @@
 #About Project
 
 ###project structure
-![Project Structure](https://raw.githubusercontent.com/RoyWorld/Dolphins/master/src/main/resources/images/20171229.png)
+![Project Structure](https://raw.githubusercontent.com/RoyWorld/Dolphins/master/src/main/resources/images/projectStructure.png)
 
 ###domain
 常用的domain其实就是`Table`和`Column`
