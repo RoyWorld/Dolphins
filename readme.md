@@ -31,8 +31,10 @@ CREATE TABLE `tb_xx` (
   PRIMARY KEY (`id`),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='XX表|系统XX信息|XX管理|系统管理|CreateBaseDomain\r\n系统XX表';
 ```
+
 由于现在注释了`TableFactory`中的部分代码, 部分改动代码如下:
 ![Change Code](https://raw.githubusercontent.com/RoyWorld/Dolphins/master/src/main/resources/images/changeCode.png)
+
 下面的实例是`Mysql`下的**现在的DDL**
 ```sql
 CREATE TABLE `tb_xx` (
