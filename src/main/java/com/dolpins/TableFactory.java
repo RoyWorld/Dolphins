@@ -166,10 +166,15 @@ public class TableFactory {
                     comments = lines[0].split("\\|");
                     table.setName(comments[0]);
                     if (comments.length > 1) {
-                        table.setResName(comments[1]);
-                        table.setParentResName(comments[2]);
-                        if (comments[3] != null) {
-                            table.setParentClassName(comments[3]);
+//                        table.setResName(comments[1]);
+//                        table.setParentResName(comments[2]);
+//                        if (comments[3] != null) {
+//                            table.setParentClassName(comments[3]);
+//                        } else {
+//                            table.setParentClassName("BaseDomain");
+//                        }
+                        if (comments[1] != null) {
+                            table.setParentClassName(comments[1]);
                         } else {
                             table.setParentClassName("BaseDomain");
                         }
@@ -180,23 +185,23 @@ public class TableFactory {
                     table.setParentClassName("BaseDomain");
                 }
 
-                if (comments != null && comments.length > 1 && parentResMap.get(comments[2]) == null) {
-                    parentRes = new ParentRes();
-                    parentRes.setName(comments[2]);
-                    parentRes.setSeq(SeqGen.incr(SeqGen.MODEL));
-
-                    parentRes.setNumber(NumGen.genNum(parentRes.getSeq()));
-
-                    parentResMap.put(comments[2], parentRes);
-                } else {
-                    parentRes = new ParentRes();
-                    parentRes.setName("");
-                    parentRes.setSeq(SeqGen.incr(SeqGen.MODEL));
-
-                    parentRes.setNumber(NumGen.genNum(parentRes.getSeq()));
-
-                    parentResMap.put("", parentRes);
-                }
+//                if (comments != null && comments.length > 1 && parentResMap.get(comments[2]) == null) {
+//                    parentRes = new ParentRes();
+//                    parentRes.setName(comments[2]);
+//                    parentRes.setSeq(SeqGen.incr(SeqGen.MODEL));
+//
+//                    parentRes.setNumber(NumGen.genNum(parentRes.getSeq()));
+//
+//                    parentResMap.put(comments[2], parentRes);
+//                } else {
+//                    parentRes = new ParentRes();
+//                    parentRes.setName("");
+//                    parentRes.setSeq(SeqGen.incr(SeqGen.MODEL));
+//
+//                    parentRes.setNumber(NumGen.genNum(parentRes.getSeq()));
+//
+//                    parentResMap.put("", parentRes);
+//                }
             } else {
                 throw new RuntimeException("table comments is not empty");
             }
@@ -432,9 +437,14 @@ public class TableFactory {
                     table.setDescription(lines[1]);
                     comments = lines[0].split("\\|");
                     table.setName(comments[0]);
-                    table.setResName(comments[1]);
-                    table.setParentResName(comments[2]);
-                    if (comments[3] != null) {
+//                    table.setResName(comments[1]);
+//                    table.setParentResName(comments[2]);
+//                    if (comments[3] != null) {
+//                        table.setParentClassName(comments[3]);
+//                    } else {
+//                        table.setParentClassName("BaseDomain");
+//                    }
+                    if (comments[1] != null) {
                         table.setParentClassName(comments[3]);
                     } else {
                         table.setParentClassName("BaseDomain");
@@ -443,15 +453,15 @@ public class TableFactory {
                     table.setParentClassName("BaseDomain");
                 }
 
-                if (comments != null && parentResMap.get(comments[2]) == null) {
-                    parentRes = new ParentRes();
-                    parentRes.setName(comments[2]);
-                    parentRes.setSeq(SeqGen.incr(SeqGen.MODEL));
-
-                    parentRes.setNumber(NumGen.genNum(parentRes.getSeq()));
-
-                    parentResMap.put(comments[2], parentRes);
-                }
+//                if (comments != null && parentResMap.get(comments[2]) == null) {
+//                    parentRes = new ParentRes();
+//                    parentRes.setName(comments[2]);
+//                    parentRes.setSeq(SeqGen.incr(SeqGen.MODEL));
+//
+//                    parentRes.setNumber(NumGen.genNum(parentRes.getSeq()));
+//
+//                    parentResMap.put(comments[2], parentRes);
+//                }
             } else {
                 throw new RuntimeException("table comments is not empty");
             }

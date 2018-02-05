@@ -18,6 +18,31 @@ List<Table> tableList = TableFactory.getInstance().getAllTables();
 * location: 在resource下的database.xml
 * content: database相关的信息
 
-
-
+### DDL
+下面的实例是`Mysql`下的**原来的DDL**
+```sql
+CREATE TABLE `tb_xx` (
+  `id` varchar(36) NOT NULL COMMENT '主键',
+  `remark` varchar(128) DEFAULT NULL COMMENT '备注',
+  `creator` varchar(36) DEFAULT NULL COMMENT '创建人',
+  `lastModifier` varchar(36) DEFAULT NULL COMMENT '最后修改人',
+  `createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新建时间',
+  `lastModify` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后修改时间',
+  PRIMARY KEY (`id`),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='XX表|系统XX信息|XX管理|系统管理|CreateBaseDomain\r\n系统XX表';
+```
+由于现在注释了`TableFactory`中的部分代码, 部分改动代码如下:
+![Change Code](https://raw.githubusercontent.com/RoyWorld/Dolphins/master/src/main/resources/images/changeCode.png)
+下面的实例是`Mysql`下的**现在的DDL**
+```sql
+CREATE TABLE `tb_xx` (
+  `id` varchar(36) NOT NULL COMMENT '主键',
+  `remark` varchar(128) DEFAULT NULL COMMENT '备注',
+  `creator` varchar(36) DEFAULT NULL COMMENT '创建人',
+  `lastModifier` varchar(36) DEFAULT NULL COMMENT '最后修改人',
+  `createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新建时间',
+  `lastModify` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后修改时间',
+  PRIMARY KEY (`id`),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='XX表|CreateBaseDomain\r\n系统XX表';
+```
 
