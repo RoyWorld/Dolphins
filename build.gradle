@@ -12,12 +12,12 @@ repositories {
 
 task createJavaFile() {
 
-    file("src/main/java/com/dolpins").mkdirs()
+    file("src/main/java/com/dolphins").mkdirs()
 
 //    file('src/main/java/com/dolpins/package-info.java').createNewFile()
 
 
-    file("src/test/java/com/dolpins").mkdirs()
+    file("src/test/java/com/dolphins").mkdirs()
 
 //    file('src/test/java/com/dolpins/package-info.java').createNewFile()
 }
