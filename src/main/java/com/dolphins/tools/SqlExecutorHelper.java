@@ -1,4 +1,4 @@
-package com.dolpins.tools;
+package com.dolphins.tools;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
